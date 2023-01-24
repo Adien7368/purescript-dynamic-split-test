@@ -1,0 +1,27 @@
+{
+  "name": "purescript-dynamic-split-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "build": "spago build",
+    "test": "spago test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Adien7368/purescript-dynamic-split-test.git"
+  },
+  "keywords": [
+    "purescript",
+    "javascript"
+  ],
+  "author": "Avinash (Adien7368)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Adien7368/purescript-dynamic-split-test/issues"
+  },
+  "homepage": "https://github.com/Adien7368/purescript-dynamic-split-test#readme"
+}
