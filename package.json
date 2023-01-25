@@ -1,14 +1,21 @@
 {
-  "name": "purescript-dynamic-split-test",
+  "name": "my-webpack-project",
   "version": "1.0.0",
-  "description": "",
+  "description": "My webpack project",
   "main": "index.js",
   "directories": {
     "test": "test"
   },
   "scripts": {
-    "build": "spago build",
-    "test": "spago test"
+    "build": "spago build && webpack --mode=production --node-env=production",
+    "test": "spago test",
+    "build:dev": "spago build && webpack --mode=development",
+    "build:prod": "spago build && webpack --mode=production --node-env=production",
+    "watch": "run-p \"watch:*\"",
+    "watch:spago": "spago build -w",
+    "watch:webpack": "webpack --watch",
+    "serve": "webpack serve",
+    "dev": "run-p watch serve"
   },
   "repository": {
     "type": "git",
@@ -23,5 +30,18 @@
   "bugs": {
     "url": "https://github.com/Adien7368/purescript-dynamic-split-test/issues"
   },
-  "homepage": "https://github.com/Adien7368/purescript-dynamic-split-test#readme"
+  "homepage": "https://github.com/Adien7368/purescript-dynamic-split-test#readme",
+  "devDependencies": {
+    "@babel/plugin-syntax-dynamic-import": "^7.8.3",
+    "@babel/preset-env": "^7.20.2",
+    "@webpack-cli/generators": "^3.0.1",
+    "babel-loader": "^9.1.2",
+    "html-webpack-plugin": "^5.5.0",
+    "npm-run-all": "^4.1.5",
+    "purescript": "^0.15.7",
+    "spago": "^0.20.9",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^4.11.1"
+  }
 }
