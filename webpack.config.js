@@ -1,10 +1,19 @@
 // Generated using webpack-cli https://github.com/webpack/webpack-cli
 
 const path = require('path');
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const isProduction = process.env.NODE_ENV == 'production';
+let plugin = [new HtmlWebpackPlugin({
+    template: 'index.html',
+})];
 
+// if(false){
+//     plugin.push(new webpack.optimize.LimitChunkCountPlugin({
+//         maxChunks: 1,
+//       }));
+// }
 
 const config = {
     entry: './index.js',
@@ -15,14 +24,7 @@ const config = {
         open: true,
         host: 'localhost',
     },
-    plugins: [
-        new HtmlWebpackPlugin({
-            template: 'index.html',
-        }),
-
-        // Add your plugins here
-        // Learn more about plugins from https://webpack.js.org/configuration/plugins/
-    ],
+    plugins: plugin,
     module: {
         rules: [
             {
