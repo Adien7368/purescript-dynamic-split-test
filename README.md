@@ -1,4 +1,4 @@
-# 🚀 Welcome to your new awesome project!
+# 🚀 Dynamic import bundle split, implimentation
 
 This project has been created using **webpack-cli**, you can now run
 
