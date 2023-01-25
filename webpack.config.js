@@ -9,37 +9,17 @@ let plugin = [new HtmlWebpackPlugin({
     template: 'index.html',
 })];
 
-// if(false){
-//     plugin.push(new webpack.optimize.LimitChunkCountPlugin({
-//         maxChunks: 1,
-//       }));
-// }
-
 const config = {
-    entry: './index.js',
+    entry: ['./index.js'],
     output: {
         path: path.resolve(__dirname, 'dist'),
+        filename: '[name].js'
     },
     devServer: {
         open: true,
         host: 'localhost',
     },
-    plugins: plugin,
-    module: {
-        rules: [
-            {
-                test: /\.(js|jsx)$/i,
-                loader: 'babel-loader',
-            },
-            {
-                test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
-                type: 'asset',
-            },
-
-            // Add your rules for custom modules here
-            // Learn more about loaders from https://webpack.js.org/loaders/
-        ],
-    },
+    plugins: plugin
 };
 
 module.exports = () => {
